@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1200px;height:630px;overflow:hidden;background:#14120E;font-family:"Noto Sans SC",sans-serif;color:#F3EEE2;position:relative}
+  .glow{position:absolute;left:-140px;top:-200px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(217,184,96,.13),transparent 62%)}
+  .glow2{position:absolute;right:-160px;bottom:-260px;width:860px;height:860px;border-radius:50%;background:radial-gradient(circle,rgba(194,84,62,.12),transparent 62%)}
+  .frame{position:absolute;inset:26px;border:1.5px solid rgba(217,184,96,.5);border-radius:22px}
+  .frame2{position:absolute;inset:40px;border:1px solid rgba(217,184,96,.14);border-radius:16px}
+  .l{position:absolute;left:84px;top:50%;transform:translateY(-50%);width:620px}
+  .eyebrow{font-family:ui-monospace,Consolas,monospace;font-size:17px;letter-spacing:6px;color:#D9B860}
+  h1{font-family:"Noto Serif SC",serif;font-size:74px;font-weight:700;letter-spacing:8px;margin-top:20px}
+  .sub{font-size:24px;color:#C2B89E;margin-top:18px;letter-spacing:1px}
+  .metas{display:flex;gap:16px;margin-top:30px;font-size:17px;color:#8C826D}
+  .metas i{width:4px;height:4px;border-radius:50%;background:#D9B860;align-self:center}
+  .domain{position:absolute;left:84px;bottom:62px;font-family:ui-monospace,Consolas,monospace;font-size:19px;letter-spacing:3px;color:#8C826D}
+  .r{position:absolute;right:118px;top:50%;transform:translateY(-50%);width:440px;height:350px}
+  .fc{position:absolute;left:50%;top:50%;width:190px;height:270px;margin:-135px 0 0 -95px;border-radius:16px;background:linear-gradient(165deg,#221E17,#171410);border:1px solid rgba(243,238,226,.14)}
+  .fc::before{content:"";position:absolute;inset:8px;border-radius:11px;border:1px solid rgba(243,238,226,.07)}
+  .fc .emb{position:absolute;left:50%;top:50%;transform:translate(-50%,-56%);width:76px;height:76px}
+  .fc .nb{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);font-family:ui-monospace,Consolas,monospace;font-size:13px;letter-spacing:4px;color:#8C826D}
+  .f1{transform:translate(-116px,26px) rotate(-14deg);opacity:.7}
+  .f3{transform:translate(116px,26px) rotate(14deg);opacity:.7}
+  .f2{z-index:3;width:214px;height:304px;margin:-152px 0 0 -107px;border-color:rgba(217,184,96,.6);box-shadow:0 0 0 1px rgba(217,184,96,.2),0 30px 60px -24px rgba(0,0,0,.95)}
+  .f2 .emb{width:92px;height:92px}
+  .f2 .nb{color:#D9B860}
+  .f2::after{content:"";position:absolute;inset:0;border-radius:16px;background:radial-gradient(circle at 50% 30%,rgba(217,184,96,.16),transparent 64%)}
+  svg{width:100%;height:100%;display:block}
+</style>
+</head>
+<body>
+  <div class="glow"></div><div class="glow2"></div>
+  <div class="frame"></div><div class="frame2"></div>
+  <div class="l">
+    <div class="eyebrow">专题小测 N°02 · 人格盲盒实验室</div>
+    <h1>狼人杀人格图鉴</h1>
+    <div class="sub">上桌之前，先看看你是什么牌。</div>
+    <div class="metas"><span>36 道核心题 + 6 道校准题</span><i></i><span>约 4 分钟</span><i></i><span>12 种身份</span></div>
+  </div>
+  <div class="domain">personalboxlab.com/wolf/</div>
+  <div class="r">
+    <div class="fc f1"><span class="emb"><svg viewBox="0 0 24 24" fill="none"><path d="M10 3.5h4M11 3.5v5.2l-4.4 7.8a2.4 2.4 0 0 0 2.1 3.5h6.6a2.4 2.4 0 0 0 2.1-3.5L13 8.7V3.5M8 15.4h8" stroke="#8C826D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="nb">BREW</span></div>
+    <div class="fc f3"><span class="emb"><svg viewBox="0 0 24 24" fill="none"><path d="M3.5 8.5c2-2 4-2 6 0s4 2 6 0M3.5 13.5c2-2 4-2 6 0s4 2 6 0M3.5 18.5c2-2 4-2 6 0s4 2 6 0" stroke="#8C826D" stroke-width="1.5" stroke-linecap="round"/></svg></span><span class="nb">DIVE</span></div>
+    <div class="fc f2"><span class="emb"><svg viewBox="0 0 24 24" fill="none"><path d="M13.5 2.5 6.2 13.4h4.6L10 21.5l7.8-11h-4.9l.6-8z" stroke="#D9B860" stroke-width="1.5" stroke-linejoin="round"/></svg></span><span class="nb">HYPE</span></div>
+  </div>
+</body>
+</html>

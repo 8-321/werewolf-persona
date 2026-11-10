@@ -1,0 +1,435 @@
+{
+  "version": "2.0.0",
+  "meta": {
+    "target": "personalboxlab.com/wolf/ （05-代码：index.html / style.css / app.js / data.js）",
+    "runAt": "2026-10-04 15:35:13",
+    "engine": "Node v22.22.2 + Chromium headless（ms-playwright chromium-1243）",
+    "note": "本轮为纯功能性验证（DOM 断言），未做视觉截图；断言均由实际执行产出，未通过者一律记为 false"
+  },
+  "suites": [
+    {
+      "id": "A",
+      "name": "语法检查",
+      "desc": "node --check data.js 与 node --check app.js",
+      "checks": [
+        {
+          "name": "node --check data.js",
+          "pass": true,
+          "extra": "无语法错误"
+        },
+        {
+          "name": "node --check app.js",
+          "pass": true,
+          "extra": "无语法错误"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "数据结构与算法（Node 纯函数）",
+      "desc": "载入 data.js，并从 app.js 中抽取线上算法段求值：36×4 结构、144=12×12、24=12×2、dim 合法且等于原型、SCORING 无固定 dimMax、12 型理想路径、5000 次随机不变量（匹配度 72~96 / 四维 24~98 / 阵营合计 100）、校准触发判定、未触发按 36 题计算",
+      "checks": [
+        {
+          "name": "核心题 36 道",
+          "pass": true,
+          "extra": "实际 36"
+        },
+        {
+          "name": "核心每题 4 个选项",
+          "pass": true,
+          "extra": "4"
+        },
+        {
+          "name": "核心 144 选项中每型恰好 12 次",
+          "pass": true,
+          "extra": "hype=12 hook=12 dive=12 king=12 seer=12 brew=12 bang=12 wall=12 mvp=12 chill=12 wild=12 pure=12"
+        },
+        {
+          "name": "校准题 6 道",
+          "pass": true,
+          "extra": "实际 6"
+        },
+        {
+          "name": "校准每题 4 个选项",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "校准 24 选项中每型恰好 2 次",
+          "pass": true,
+          "extra": "hype=2 hook=2 dive=2 king=2 seer=2 brew=2 bang=2 wall=2 mvp=2 chill=2 wild=2 pure=2"
+        },
+        {
+          "name": "全部 type 存在于 ORDER",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "同一题内不重复映射同一型",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "dim 均为 4 个 0~3 整数",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "每题每维可达最大值 > 0",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "每个选项 dim 等于其类型原型向量",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "阈值 ≤2 / 校准权重 1.5",
+          "pass": true,
+          "extra": "threshold=2 weight=1.5"
+        },
+        {
+          "name": "动态归一参数：perQuestionMax / 24~98",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "已移除固定 dimMax / perTypeMax",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "matchWeights 权重和为 1",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "12 型字段齐全（含 social/contrast/commentHook/shareCaptions）",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "rank 1~12 唯一",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "code 唯一",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "12 型徽章 SVG 路径齐全",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "12 型理想路径全部命中本命",
+          "pass": true,
+          "extra": "12/12"
+        },
+        {
+          "name": "校准触发判定 = 冠亚差 ≤ 阈值",
+          "pass": true,
+          "extra": "gap=1"
+        },
+        {
+          "name": "冠亚差 > 2 时不触发校准",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "随机 5000 次：无 NaN／匹配度 72~96／四维 24~98",
+          "pass": true,
+          "extra": "匹配度 78~92 四维 46~91"
+        },
+        {
+          "name": "随机 5000 次：阵营占比之和恒为 100%",
+          "pass": true,
+          "extra": "异常 0 次"
+        },
+        {
+          "name": "随机 5000 次：校准触发次数 4730（94.6%）",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "未触发校准时按 36 题计算",
+          "pass": true,
+          "extra": "answered=36"
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "name": "静态一致性",
+      "desc": "app.js 查询的 id 与 index.html 一致；无 unsplash/picsum/placeholder/lorem；无 emoji 与 emoji 式符号；无心理诊断措辞与伪造人数",
+      "checks": [
+        {
+          "name": "无 emoji / emoji 式符号（data.js + 前端）",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "无心理诊断措辞、无伪造人数",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "无占位资源关键词：unsplash",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "无占位资源关键词：picsum",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "无占位资源关键词：placeholder",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "无占位资源关键词：lorem",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "app.js 查询的 id 全部存在于 index.html",
+          "pass": true,
+          "extra": ""
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "name": "浏览器功能 e2e（无头，无截图）",
+      "desc": "真实点击全流程：封面 → 36 题（含 3 次章节过场、上一题）→ 校准引导页 + 6 题（总数切 42）→ 生成中 → 结果页字段 → 结果卡 1080×1440 → 复制/关闭 → 断点续测与重新开始",
+      "checks": [
+        {
+          "name": "封面激活",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "封面计数为中性文案（无伪造人数）",
+          "pass": true,
+          "extra": "全部计算在你的浏览器里完成 · 答案不上传"
+        },
+        {
+          "name": "封面 metas 含「36 道题」",
+          "pass": true,
+          "extra": "36 道题约 4 分钟12 种身份"
+        },
+        {
+          "name": "封面提示含「加 6 题」",
+          "pass": true,
+          "extra": "没玩过狼人杀也能测 · 按直觉选 · 36 道核心题，难分胜负时最多加 6 题"
+        },
+        {
+          "name": "关于/免责弹层可打开",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "关于弹层可键盘（Esc）关闭",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "进入答题页",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "核心期总数显示 36",
+          "pass": true,
+          "extra": "36"
+        },
+        {
+          "name": "进度条为单条 scaleX",
+          "pass": true,
+          "extra": "scaleX(0.0278)"
+        },
+        {
+          "name": "进度区不生成 42 个 DOM 节点",
+          "pass": true,
+          "extra": "节点数 1"
+        },
+        {
+          "name": "题号播报为 aria-live",
+          "pass": true,
+          "extra": "第 1 题，共 36 题"
+        },
+        {
+          "name": "答题可推进到第 2 题",
+          "pass": true,
+          "extra": "02"
+        },
+        {
+          "name": "上一题回到第 1 题",
+          "pass": true,
+          "extra": "01"
+        },
+        {
+          "name": "章节过场出现 3 次",
+          "pass": true,
+          "extra": "实际 3"
+        },
+        {
+          "name": "核心 36 / 校准 42 总数切换",
+          "pass": true,
+          "extra": "36 / 42 +校准"
+        },
+        {
+          "name": "进入结果页",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "主型名称已渲染",
+          "pass": true,
+          "extra": "悍跳狼"
+        },
+        {
+          "name": "代号已渲染",
+          "pass": true,
+          "extra": "H Y P E"
+        },
+        {
+          "name": "匹配度 72~96",
+          "pass": true,
+          "extra": "匹配度 86%"
+        },
+        {
+          "name": "稀有度含「图鉴第 N 位」",
+          "pass": true,
+          "extra": "图鉴第 9 位 · 常见"
+        },
+        {
+          "name": "占比标为「设定占比」",
+          "pass": true,
+          "extra": "设定占比 约 13%"
+        },
+        {
+          "name": "四维为 4 项且落在 24~98",
+          "pass": true,
+          "extra": "74/85/63/73"
+        },
+        {
+          "name": "阵营三段合计 100%",
+          "pass": true,
+          "extra": "45+35+20=100"
+        },
+        {
+          "name": "副型/最合拍区块存在",
+          "pass": true,
+          "extra": "副型预言家 · 78%最合拍 / 最相克守卫/倒钩狼"
+        },
+        {
+          "name": "social（现实版本）已渲染",
+          "pass": true,
+          "extra": "现实里的你：开会第一个发言、群里第一个接话、冷场…"
+        },
+        {
+          "name": "contrast 双句已渲染",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "commentHook 已渲染",
+          "pass": true,
+          "extra": "评论区报到：你也是那种「我先来说两句」的人吗。…"
+        },
+        {
+          "name": "shareCaptions 三条",
+          "pass": true,
+          "extra": "3"
+        },
+        {
+          "name": "四个传播按钮齐全",
+          "pass": true,
+          "extra": "保存结果卡 / 原生分享 / 复制链接 / 再测一次"
+        },
+        {
+          "name": "document.title 已复原（无题号残留）",
+          "pass": true,
+          "extra": "狼人杀人格图鉴 · 你上桌，是哪一种身份？"
+        },
+        {
+          "name": "结果卡已生成",
+          "pass": true,
+          "extra": "data:image/png;base64,"
+        },
+        {
+          "name": "结果卡尺寸 1080×1440",
+          "pass": true,
+          "extra": "1080×1440"
+        },
+        {
+          "name": "弹层可关闭",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "DIAG clipboard",
+          "pass": true,
+          "extra": "secure=true href=file:///C:/Users/34137/A"
+        },
+        {
+          "name": "复制链接有反馈（含超时兜底）",
+          "pass": true,
+          "extra": "复制失败，请长按地址栏手动复制"
+        },
+        {
+          "name": "本机完成次数已累加",
+          "pass": true,
+          "extra": "wolf.localCount=1"
+        },
+        {
+          "name": "进度已清空（不可续答旧答案）",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "无 JS 运行时报错",
+          "pass": true,
+          "extra": ""
+        },
+        {
+          "name": "答题进度已写入 localStorage",
+          "pass": true,
+          "extra": "stage=core idx=2"
+        },
+        {
+          "name": "封面出现「继续上次鉴定」",
+          "pass": true,
+          "extra": "继续上次鉴定"
+        },
+        {
+          "name": "断点续测恢复到第 3 题",
+          "pass": true,
+          "extra": "03"
+        },
+        {
+          "name": "可重新开始（清空进度）",
+          "pass": true,
+          "extra": "restart 按钮存在"
+        },
+        {
+          "name": "prefers-reduced-motion 模式全流程无失败",
+          "pass": true,
+          "extra": "失败 0 项"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total": 78,
+    "passed": 78,
+    "failed": 0
+  },
+  "errors": []
+}
